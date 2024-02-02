@@ -56,3 +56,13 @@ git push -u origin main
 # Файл HEAD  
 Он указывает на коммит, который сделан последним (то есть на самый новый). Если нужно передать последний коммит, то вместо его хеша можно просто написать слово HEAD — Git поймёт, что вы имели в виду последний коммит.  
 
+# Статусы файлов в Git
+Staging area также называют index (англ. «каталог») или cache.  
+
+```mermaid
+graph LR;
+  untracked -- "git add" --> staged;
+  staged    -- "git commit" --> tracked;
+  tracked   -- "изменения" --> modified;
+  modified  -- "git add" --> staged;
+```
