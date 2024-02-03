@@ -26,6 +26,15 @@
 git push -u origin main
 
 
+# Работа с файлами
+**git restore --staged %file**
+Удаляет файл из индекса. Полезно, если случайно индексировал временный файл.
+**git reset --hard %commitHash**
+Позволяет откатить проект к коммиту с указанным хэшем.
+**git restore %file**
+Позволяет отменить изменения у файла и вернуться к закоммиченной версии.
+
+
 # Про Git и GitHub  
 * Git — это консольный инструмент для работы с локальными и удалёнными репозиториями. Он не связан напрямую ни с одной из платформ и развивается отдельно от них.  
 * GitHub — платформа, которая работает с Git и упрощает командное взаимодействие.  
@@ -61,7 +70,7 @@ Staging area также называют index (англ. «каталог») и
 
 ```mermaid
 graph LR;
-  untracked -- "git add" --> staged;
+  untracked -- "git add" --> staged + tracked;
   staged    -- "git commit" --> tracked;
   tracked   -- "изменения" --> modified;
   modified  -- "git add" --> staged;
